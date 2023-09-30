@@ -1,51 +1,52 @@
 Car Rental System
-This Python script implements a basic car rental system using SQLite as a database. Users can add cars, list available cars, rent cars, return cars, and more.
+The Car Rental System is a Python-based application using SQLite for data storage and tkinter for GUI. It allows users to rent, return, add, or delete cars and view current rentals.
 
 Features
-Add Car: You can add a new car to the system by specifying its name and daily rental rate.
-
-Delete Car: Remove a car from the system by providing its unique CarID.
-
-List Cars: You can list all cars available in the system or only the cars that are not currently rented.
-
-Rent Car: Rent a car by selecting from the available cars, specifying the customer's name, number of days, and optionally setting a custom rate.
-
-Return Car: Return a rented car by providing its CarID. The system calculates the total cost of the rental based on the rental rate and tax.
-
-Show Rented Cars: Display a list of cars that are currently rented, along with detailed information about the rental.
-
+List all cars.
+Rent a car.
+Return a rented car.
+Add a new car to the system.
+Delete a car from the system.
+Display currently rented cars.
 Setup
-Database Initialization: The script uses SQLite for data storage. When you run the script, it will create a database file named rental_data.db if it doesn't already exist.
+Requirements
+Python
+SQLite
+tkinter
+Running the application
+Make sure you have Python and SQLite installed.
+Clone or download the source code.
+Navigate to the directory containing the code.
+Run the application with:
+php
+Copy code
+python <filename>.py
+Replace <filename>.py with the name you've saved the code as.
 
-Tax Rate: The default tax rate is set to 7%, but you can easily change this value by modifying the TAX_RATE variable in the script.
+How to use
+List all cars: Displays a list of all cars in the system.
+Rent a car: Allows a user to rent an available car. The user will be asked for the CarID, their name, number of days, and an optional custom rate.
+Return a car: Enables a user to return a rented car. The user will be asked for the CarID of the car they're returning.
+Add a car: Adds a new car to the system. The user will be prompted for the car name and daily rate.
+Delete a car: Removes a car from the system. The user will be asked for the CarID of the car they wish to delete.
+Show rented cars: Displays a list of cars that are currently rented.
+Design
+The application is designed with two main classes:
 
-Usage
-Run the script using a Python interpreter.
+CarRentalSystem: Manages the database operations such as adding, deleting, renting, and returning cars.
+CarRentalApp: Manages the GUI of the application and interacts with the CarRentalSystem.
+Database
+The application uses an SQLite database (rental_data.db) with a table named cars to store all the information about the cars.
 
-You'll be presented with a menu of options:
+Schema:
+CarID: Unique identifier for each car.
+CarName: Name of the car.
+DailyRate: Standard daily rate for renting the car.
+CustomRate: Custom rate (if set during renting).
+RentedBy: Name of the person who rented the car (if rented).
+NumberOfDays: Number of days the car has been rented for.
+DateRented: Date the car was rented.
+Customizations
+Tax Rate: The tax rate is set as a constant TAX_RATE at 7%. You can adjust this rate by changing the value of this constant.
 
-List all cars
-Rent a car
-Return a car
-Add a car
-Delete a car
-Show rented cars
-Exit
-Choose an option by entering the corresponding number.
-
-Follow the prompts to interact with the car rental system.
-
-Example
-Here's a simple example of using the script:
-
-List all available cars.
-Rent a car by specifying the car number, customer name, and rental duration.
-Return the rented car when you're done.
-Add or delete cars as needed.
-Show rented cars to view active rentals.
-Exit the script when you're finished.
-Dependencies
-Python 3.x
-SQLite3 (Python Standard Library)
-Author
-Adam Moffat
+Author: Adam Moffat
